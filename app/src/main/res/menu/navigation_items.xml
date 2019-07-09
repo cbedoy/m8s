@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_dags"
+          android:title="@string/dags"
+          android:icon="@drawable/action_conversations" />
+    <item android:id="@+id/action_users"
+          android:title="@string/users"
+          android:icon="@drawable/action_users" />
+    <item android:id="@+id/action_explorer"
+          android:title="@string/explorer"
+          android:icon="@drawable/action_explorer" />
+</menu>
