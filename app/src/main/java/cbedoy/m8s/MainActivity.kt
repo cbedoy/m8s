@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        replaceView(views["users"])
     }
 
     private fun replaceView(fragment: Fragment?) {

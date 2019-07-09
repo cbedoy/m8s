@@ -2,6 +2,7 @@ package cbedoy.m8s.utils
 
 import android.annotation.SuppressLint
 import cbedoy.m8s.BuildConfig
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -67,6 +68,7 @@ object RetrofitService : AnkoLogger{
         return Retrofit.Builder()
             .baseUrl("https://develop.dagm8.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(httpClient.build())
             .build()

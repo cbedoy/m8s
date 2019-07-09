@@ -2,6 +2,7 @@ package cbedoy.m8s.services
 
 import cbedoy.m8s.models.User
 import io.reactivex.Observable
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,7 +13,7 @@ interface UserService {
     fun getUser(@Path("id") id: String) : Call<User>
 
     @GET("college/{college}/directory")
-    fun getCollege(@Path("college") id: String, @Query("user_id") user: String) : Call<List<User>>
+    fun getCollege(@Path("college") id: String, @Query("user_id") user: String) : Deferred<List<User>>
 
     @GET("user/{id}")
     fun getUserAsObservable(@Path("id") id: String) : Observable<User>
