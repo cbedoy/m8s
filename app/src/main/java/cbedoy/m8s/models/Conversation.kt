@@ -14,6 +14,9 @@ open class Conversation {
     @ColumnInfo(name = "type")
     var type: String? = null
 
+    @ColumnInfo(name = "nature")
+    var nature: String? = null
+
     @ColumnInfo(name = "creationDate")
     var creation_date: Double = 0.0
 

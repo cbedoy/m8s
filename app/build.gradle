@@ -89,6 +89,8 @@ dependencies {
     // For Kotlin use kapt instead of annotationProcessor
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
+    implementation 'android.arch.paging:runtime:1.0.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--    Fender Colors
+            https://www.color-hex.com/color-palette/58044
+    -->
+
     <color name="colorPrimary">#b4cfb0</color>
-    <color name="colorPrimaryDark">#8ea88b</color>
-    <color name="colorAccent">#c35831</color>
+    <color name="colorPrimaryDark">#748572</color>
+    <color name="colorAccent">#e09c3b</color>
     <color name="white">#FFFFFF</color>
+    <color name="background">#f0f0f0</color>
+
+    <color name="error_color">#e09c3b</color>
+    <color name="warning_color">#aaaaaa</color>
+
+    <color name="color_one">#b4cfb0</color>
+    <color name="color_two">#98c6c3</color>
+    <color name="color_three">#e09c3b</color>
+    <color name="color_four">#dcbab5</color>
+    <color name="color_five">#aaaaaa</color>
+
 </resources>

@@ -20,15 +20,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemReselectedListener {
+        bottom_navigation_view.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.action_explorer -> replaceView(views["explorer"])
                 R.id.action_dags -> replaceView(views["dags"])
                 R.id.action_users -> replaceView(views["users"])
             }
+            true
         }
 
-        replaceView(views["users"])
+        replaceView(views["dags"])
     }
 
     private fun replaceView(fragment: Fragment?) {

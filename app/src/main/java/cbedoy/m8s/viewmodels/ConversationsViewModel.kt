@@ -2,20 +2,26 @@ package cbedoy.m8s.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import cbedoy.m8s.models.Conversation
-import cbedoy.m8s.models.User
 import cbedoy.m8s.repositories.ConversationsRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
-class ConversationsViewModel : ViewModel(){
+class ConversationsViewModel : NotificationStateViewModel(){
 
-    lateinit var user: User
+    private val _conversations = MutableLiveData<List<Conversation>>()
+    val conversations: LiveData<List<Conversation>> = _conversations
 
-    val conversations: LiveData<List<Conversation>> by lazy {
-        loadConversations(user)
-    }
+    private var job = Job()
+    private val scope = CoroutineScope(job + Dispatchers.IO )
 
-    private fun loadConversations(user: User) : MutableLiveData<List<Conversation>> {
-        return ConversationsRepository.loadConversations(user)
+    fun loadConversations() {
+        scope.launch {
+            _state.postValue(NotificationState.LOADING)
+            _conversations.postValue(ConversationsRepository.loadConversations())
+            _state.postValue(NotificationState.ERROR)
+        }
     }
 }

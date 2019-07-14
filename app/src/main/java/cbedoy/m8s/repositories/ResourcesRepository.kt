@@ -2,9 +2,9 @@ package cbedoy.m8s.repositories
 
 import androidx.lifecycle.MutableLiveData
 import cbedoy.m8s.models.Resource
-import cbedoy.m8s.models.User
 import cbedoy.m8s.services.ResourcesService
 import cbedoy.m8s.utils.RetrofitService
+import cbedoy.m8s.utils.UtilsProvider
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,8 +13,9 @@ object ResourcesRepository {
     private var service: ResourcesService = RetrofitService.createService(ResourcesService::class.java)
 
 
-    fun getResources(user: User) : MutableLiveData<List<Resource>> {
+    fun getResources() : MutableLiveData<List<Resource>> {
         val mutableLiveData = MutableLiveData<List<Resource>>()
+        val user = UtilsProvider.sessionUser()
 
         val call = service.getResources(user.id, true, Integer.MAX_VALUE)
         call.enqueue(object : Callback<List<Resource>>{

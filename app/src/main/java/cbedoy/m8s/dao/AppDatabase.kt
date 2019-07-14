@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import cbedoy.m8s.models.Conversation
 import cbedoy.m8s.models.User
 
-@Database(entities = [User::class, Conversation::class], version = 6, exportSchema = false)
+@Database(entities = [User::class, Conversation::class], version = 7, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun conversationDao(): ConversationDao

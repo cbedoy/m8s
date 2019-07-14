@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import cbedoy.m8s.R
 import cbedoy.m8s.adapters.UserAdapter
-import cbedoy.m8s.models.User
+import cbedoy.m8s.viewmodels.NotificationStateViewModel.NotificationState.*
 import cbedoy.m8s.viewmodels.UsersViewModel
 import kotlinx.android.synthetic.main.base_view.*
 
@@ -30,17 +30,41 @@ class UsersView  : Fragment(){
         base_view_recycler_view.adapter = adapter
 
         viewModel = ViewModelProviders.of(this).get(UsersViewModel::class.java)
-        viewModel.user = User().apply {
-            id = "2845fe481e74b9010a7913d7b214a8937972d6b1"
-            college = "50592380-a016-4681-8622-482e5ea44b95"
-        }
-
-        viewModel.directory.observe(this, Observer {
-            if (it.isNotEmpty() && adapter.dataModel.size == 0){
+        viewModel.userDirectory.observe(this, Observer {
+            if(it.isNotEmpty() && adapter.dataModel.isEmpty()){
                 adapter.dataModel.addAll(it)
 
                 adapter.notifyDataSetChanged()
             }
         })
+        viewModel.state.observe(this, Observer { notificationState ->
+            when(notificationState){
+                LOADING -> {
+                    base_view_recycler_view.visibility = View.INVISIBLE
+                    base_view_empty_data_container.visibility = View.INVISIBLE
+                }
+                NONE, DONE -> {
+                    base_view_recycler_view.visibility = View.VISIBLE
+                    base_view_empty_data_container.visibility = View.INVISIBLE
+                }
+                ERROR -> {
+                    base_view_recycler_view.visibility = View.INVISIBLE
+                    base_view_empty_data_container.visibility = View.VISIBLE
+                }
+            }
+        })
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.loadUserDirectory()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        adapter.dataModel.clear()
+
+        adapter.notifyDataSetChanged()
     }
 }

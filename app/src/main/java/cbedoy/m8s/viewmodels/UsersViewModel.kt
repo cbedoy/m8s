@@ -2,29 +2,51 @@ package cbedoy.m8s.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import cbedoy.m8s.models.Conversation
 import cbedoy.m8s.models.User
 import cbedoy.m8s.repositories.ConversationsRepository
 import cbedoy.m8s.repositories.UsersRepository
+import kotlinx.coroutines.*
 
-class UsersViewModel : ViewModel(){
+class UsersViewModel: NotificationStateViewModel(){
 
-    lateinit var user: User
+    private var job = Job()
+    private val scope = CoroutineScope(job + Dispatchers.IO )
 
-    val directory: LiveData<List<User>> by lazy {
-        loadDirectory(user)
+    private val _directory = MutableLiveData<List<User>>()
+    val directory: LiveData<List<User>> = _directory
+
+    private val _userDirectory = MutableLiveData<List<Any>>()
+    val userDirectory: LiveData<List<Any>> = _userDirectory
+
+    private val _conversations = MutableLiveData<List<Conversation>>()
+    val conversations: LiveData<List<Conversation>> = _conversations
+
+    fun loadDirectory() {
+        scope.launch {
+            _directory.postValue(UsersRepository.getDirectory())
+        }
     }
 
-    val conversations: LiveData<List<Conversation>> by lazy {
-        loadConversations(user)
+    fun loadUserDirectory() {
+        scope.launch {
+            _state.postValue(NotificationState.LOADING)
+            _userDirectory.postValue(UsersRepository.prepareUserDirectory())
+            _state.postValue(NotificationState.DONE)
+        }
     }
 
-    private fun loadDirectory(user: User) : MutableLiveData<List<User>> {
-        return UsersRepository.getDirectory(user)
+    fun loadConversations(){
+        scope.launch {
+            _conversations.postValue(ConversationsRepository.loadConversations())
+        }
     }
 
-    private fun loadConversations(user: User) : MutableLiveData<List<Conversation>> {
-        return ConversationsRepository.loadConversations(user)
+
+    override fun onCleared() {
+        super.onCleared()
+
+        scope.cancel()
     }
+
 }
