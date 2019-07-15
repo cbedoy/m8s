@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-class User : CommonModel{
+class User {
     @PrimaryKey
     lateinit var id: String
 
@@ -30,9 +30,5 @@ class User : CommonModel{
 
     @ColumnInfo(name = "favorite")
     var favorite: Boolean = false
-
-    override fun getHolderType(): CommonModel.type {
-        return CommonModel.type.user
-    }
 }
 

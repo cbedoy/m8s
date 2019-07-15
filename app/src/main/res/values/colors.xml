@@ -5,19 +5,34 @@
             https://www.color-hex.com/color-palette/58044
     -->
 
-    <color name="colorPrimary">#b4cfb0</color>
-    <color name="colorPrimaryDark">#748572</color>
-    <color name="colorAccent">#e09c3b</color>
+
+    <color name="colorPrimary">#6200ee</color>
+    <color name="colorPrimaryLight">#9e47ff</color>
+    <color name="colorPrimaryDark">#0400ba</color>
+
+    <color name="colorAccent">#03dac6</color>
+    <color name="colorAccentLight">#66fff9</color>
+    <color name="colorAccentDark">#00a896</color>
+
+    <color name="profile_button_color_one">#11333333</color>
+    <color name="profile_button_color_two">#33333333</color>
+
     <color name="white">#FFFFFF</color>
-    <color name="background">#f0f0f0</color>
+    <color name="divider">#1FFFFFFF</color>
 
-    <color name="error_color">#e09c3b</color>
-    <color name="warning_color">#aaaaaa</color>
+    <color name="black_primary">#75000000</color>
+    <color name="black_secondary">#96000000</color>
 
-    <color name="color_one">#b4cfb0</color>
-    <color name="color_two">#98c6c3</color>
-    <color name="color_three">#e09c3b</color>
-    <color name="color_four">#dcbab5</color>
-    <color name="color_five">#aaaaaa</color>
+    <color name="background">#FFFFFF</color>
+
+    <color name="error_color">#b00020</color>
+    <color name="warning_color">#FFDE03</color>
+
+    <color name="color_one">#6200ee</color>
+    <color name="color_two">#9e47ff</color>
+    <color name="color_three">#0400ba</color>
+    <color name="color_four">#03dac6</color>
+    <color name="color_five">#66fff9</color>
+    <color name="color_six">#00a896</color>
 
 </resources>

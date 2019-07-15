@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import cbedoy.m8s.views.DagsView
 import cbedoy.m8s.views.ExplorerView
+import cbedoy.m8s.views.ProfileView
 import cbedoy.m8s.views.UsersView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -13,7 +14,8 @@ class MainActivity : AppCompatActivity() {
     private val views = hashMapOf(
         "explorer" to ExplorerView(),
         "dags" to DagsView(),
-        "users" to UsersView()
+        "users" to UsersView(),
+        "profile" to ProfileView()
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +27,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_explorer -> replaceView(views["explorer"])
                 R.id.action_dags -> replaceView(views["dags"])
                 R.id.action_users -> replaceView(views["users"])
+                R.id.action_explorer -> replaceView(views["profile"])
             }
             true
         }
 
-        replaceView(views["dags"])
+        replaceView(views["profile"])
     }
 
     private fun replaceView(fragment: Fragment?) {

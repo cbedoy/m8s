@@ -9,10 +9,6 @@ import cbedoy.m8s.repositories.UsersRepository
 import kotlinx.coroutines.*
 
 class UsersViewModel: NotificationStateViewModel(){
-
-    private var job = Job()
-    private val scope = CoroutineScope(job + Dispatchers.IO )
-
     private val _directory = MutableLiveData<List<User>>()
     val directory: LiveData<List<User>> = _directory
 
@@ -41,12 +37,4 @@ class UsersViewModel: NotificationStateViewModel(){
             _conversations.postValue(ConversationsRepository.loadConversations())
         }
     }
-
-
-    override fun onCleared() {
-        super.onCleared()
-
-        scope.cancel()
-    }
-
 }

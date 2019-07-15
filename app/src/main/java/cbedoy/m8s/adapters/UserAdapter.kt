@@ -7,13 +7,16 @@ import cbedoy.m8s.R
 import cbedoy.m8s.holders.BaseHolder
 import cbedoy.m8s.holders.SectionHolder
 import cbedoy.m8s.holders.UserHolder
-import cbedoy.m8s.models.CommonModel
+import cbedoy.m8s.models.Section
+import cbedoy.m8s.models.User
 
 class UserAdapter : RecyclerView.Adapter<BaseHolder>(){
     var dataModel : ArrayList<Any> = ArrayList()
 
+    private val types = arrayOf(User::class, Section::class)
+
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): BaseHolder {
-        return if (type == CommonModel.type.section.ordinal){
+        return if (Section::class == types[type]){
             val view = LayoutInflater.from(parent.context).inflate(R.layout.user_section_cell, parent, false)
             SectionHolder(view)
         }else{
@@ -23,7 +26,7 @@ class UserAdapter : RecyclerView.Adapter<BaseHolder>(){
     }
 
     override fun getItemViewType(position: Int): Int {
-        return (dataModel[position] as CommonModel).getHolderType().ordinal
+        return types.indexOf(dataModel[position]::class)
     }
 
     override fun getItemCount(): Int {

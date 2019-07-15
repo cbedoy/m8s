@@ -1,9 +1,5 @@
 package cbedoy.m8s.models
 
-class Section : CommonModel {
+class Section  {
     lateinit var title: String
-
-    override fun getHolderType(): CommonModel.type {
-        return CommonModel.type.section
-    }
 }

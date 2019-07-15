@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@drawable/header_background"
+              android:layout_width="match_parent"
+              android:paddingTop="64dp"
+              android:layout_height="wrap_content">
+
+    <ImageView
+            android:layout_width="144dp"
+            android:layout_gravity="center"
+            android:layout_height="144dp"
+            android:src="@drawable/error_circle_drawable"
+            android:id="@+id/profile_user_cell_avatar"/>
+
+    <TextView
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:textSize="34sp"
+            android:textColor="@color/white"
+            android:text="Carlos Bedoy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_user_cell_nickname"
+            android:fontFamily="@font/roboto"/>
+
+    <TextView
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="Aguascalientes, Mexico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_user_cell_email"
+            android:fontFamily="@font/roboto_light"/>
+
+    <LinearLayout
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/button_profile_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView android:layout_width="match_parent"
+                      android:text="30k"
+                      android:paddingTop="8dp"
+                      android:gravity="center"
+                      android:textColor="@color/white"
+                      android:textSize="24sp"
+                      android:layout_height="wrap_content" android:fontFamily="@font/roboto"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:text="Followers"
+                      android:paddingBottom="4dp"
+                      android:gravity="center"
+                      android:textColor="@color/white"
+                      android:textSize="18sp"
+                      android:layout_height="wrap_content" android:fontFamily="@font/roboto_light"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/button_profile_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView android:layout_width="match_parent"
+                      android:text="30k"
+                      android:paddingTop="8dp"
+                      android:gravity="center"
+                      android:textColor="@color/white"
+                      android:textSize="24sp"
+                      android:layout_height="wrap_content" android:fontFamily="@font/roboto"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:text="Followers"
+                      android:paddingBottom="4dp"
+                      android:gravity="center"
+                      android:textColor="@color/white"
+                      android:textSize="18sp"
+                      android:layout_height="wrap_content" android:fontFamily="@font/roboto_light"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

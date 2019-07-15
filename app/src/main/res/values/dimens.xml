@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding">16dp</dimen>
+    <dimen name="common_title_size">18sp</dimen>
+    <dimen name="common_description_size">18sp</dimen>
+    <dimen name="common_description_size_big">20sp</dimen>
+
+    <dimen name="conversation_title_size">15sp</dimen>
+    <dimen name="conversation_message_size">16sp</dimen>
+    <dimen name="conversation_date_size">13sp</dimen>
+
+    <dimen name="conversation_abbreviation_size">18sp</dimen>
+</resources>

@@ -9,4 +9,7 @@
     <item android:id="@+id/action_explorer"
           android:title="@string/explorer"
           android:icon="@drawable/action_explorer" />
+    <item android:id="@+id/action_profile"
+          android:title="@string/profile"
+          android:icon="@drawable/action_profile" />
 </menu>

@@ -7,6 +7,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import cbedoy.m8s.repositories.ConversationsRepository
 import cbedoy.m8s.repositories.UsersRepository
 import androidx.lifecycle.OnLifecycleEvent
+import cbedoy.m8s.repositories.ProfileRepository
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.debug
 
@@ -17,6 +18,7 @@ class M8sApplication: Application(), AnkoLogger {
 
         UsersRepository.init(this)
         ConversationsRepository.init(this)
+        ProfileRepository.init(this)
 
         ProcessLifecycleOwner.get().lifecycle.addObserver(object  : LifecycleObserver{
             @OnLifecycleEvent(Lifecycle.Event.ON_START)

@@ -8,7 +8,8 @@
 
     <ImageView
             android:layout_width="40dp"
-            android:layout_height="40dp" tools:srcCompat="@tools:sample/avatars"
+            android:layout_height="40dp"
+            android:src="@drawable/placeholder_circle_drawable"
             android:id="@+id/avatar_view"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp" android:layout_marginStart="8dp"
@@ -18,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/name_view"
-            android:textSize="16sp"
+            android:textSize="@dimen/conversation_title_size"
             app:layout_constraintStart_toEndOf="@+id/avatar_view"
             android:fontFamily="@font/roboto_medium" android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="16dp"
