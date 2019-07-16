@@ -7,6 +7,6 @@
             android:color="@color/error_color"/>
 
     <stroke
-            android:width="2dp"
-            android:color="@color/divider"/>
+            android:width="@dimen/divider_size"
+            android:color="@color/divider_color"/>
 </shape>

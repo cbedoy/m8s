@@ -3,9 +3,20 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+
     <FrameLayout
             android:id="@+id/container_frame_layout"
             android:layout_width="match_parent"
+            android:layout_marginTop="56dp"
             android:layout_marginBottom="56dp"
             android:layout_height="match_parent">
 
@@ -13,7 +24,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_view"
-            app:itemBackground="@color/colorPrimary"
+            app:itemBackground="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="bottom"

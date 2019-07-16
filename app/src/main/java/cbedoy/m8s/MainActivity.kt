@@ -27,12 +27,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_explorer -> replaceView(views["explorer"])
                 R.id.action_dags -> replaceView(views["dags"])
                 R.id.action_users -> replaceView(views["users"])
-                R.id.action_explorer -> replaceView(views["profile"])
+                R.id.action_profile -> replaceView(views["profile"])
             }
             true
         }
+        setSupportActionBar(toolbar)
 
-        replaceView(views["profile"])
+        bottom_navigation_view.selectedItemId = R.id.action_profile
     }
 
     private fun replaceView(fragment: Fragment?) {
@@ -41,7 +42,16 @@ class MainActivity : AppCompatActivity() {
             transaction.replace(R.id.container_frame_layout, fragment)
             transaction.addToBackStack(null)
 
+            supportActionBar?.title = selectedTitle()
+
             transaction.commit()
         }
+    }
+
+    private fun selectedTitle(): String? {
+        val selectedItemId = bottom_navigation_view.selectedItemId
+        val menuItem = bottom_navigation_view.menu.findItem(selectedItemId)
+
+        return "M8s"
     }
 }

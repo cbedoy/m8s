@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import cbedoy.m8s.R
 import cbedoy.m8s.viewmodels.ResourcesViewModel
 
+
 class ExplorerView : Fragment() {
     lateinit var viewModel: ResourcesViewModel
 
@@ -21,4 +22,5 @@ class ExplorerView : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(ResourcesViewModel::class.java)
     }
+
 }

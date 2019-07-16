@@ -18,12 +18,12 @@
     <color name="profile_button_color_two">#33333333</color>
 
     <color name="white">#FFFFFF</color>
-    <color name="divider">#1FFFFFFF</color>
 
     <color name="black_primary">#75000000</color>
     <color name="black_secondary">#96000000</color>
 
     <color name="background">#FFFFFF</color>
+    <color name="divider_color">#FAFAFA</color>
 
     <color name="error_color">#b00020</color>
     <color name="warning_color">#FFDE03</color>

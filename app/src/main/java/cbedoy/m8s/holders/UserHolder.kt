@@ -16,8 +16,8 @@ class UserHolder (override val containerView: View) : BaseHolder(containerView) 
 
         Glide.with(avatar_view)
             .load(any.avatar)
-            .apply(RequestOptions.placeholderOf(R.color.warning_color).circleCrop())
-            .apply(RequestOptions.errorOf(R.color.error_color).circleCrop())
+            .error(R.drawable.error_circle_drawable)
+            .placeholder(R.drawable.placeholder_circle_drawable)
             .apply(RequestOptions.circleCropTransform())
             .into(avatar_view)
     }
